@@ -17,6 +17,18 @@ const handleUserInput = function(data) {
   if (data === 'd') {
     connection.write("Move: right");
   }
+  if (data === 'j') {
+    connection.write("Say: Ez Pz");
+  }
+  if (data === 'i') {
+    connection.write("Say: Can't Beat Me");
+  }
+  if (data === 'k') {
+    connection.write("Say: Nokia Vibez");
+  }
+  if (data === 'l') {
+    connection.write("Say: Must Eat Pixels");
+  }
 
 
 };
