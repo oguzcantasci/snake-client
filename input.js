@@ -1,24 +1,15 @@
 const {moveCommands, messages} = require('./constants');
 let connection;
-let intervalId;
-let lastCommand = true;
 
-// helper function to be used as a callback to handle key inputs;
+// helper function to be used as a callback to handle data inputs;
 const handleUserInput = function(data) {
   if (data === '\u0003') { // exit the game if Ctrl + C is pressed
     process.exit();
   }
   //Moving commands
   if (moveCommands[data]) {
-    if (moveCommands[data].cancel !== lastCommand.cancel) {
-      clearInterval(intervalId);
-      lastCommand = moveCommands[data];
-      intervalId = setInterval(() => {
-        connection.write(moveCommands[data].command);
-      }, 50);
-    }
+    connection.write(moveCommands[data]);
   }
- 
   // Message inputs
   if (messages[data]) {
     connection.write(messages[data]);
