@@ -1,22 +1,45 @@
 let connection;
+let intervalId;
+let lastCommand;
 
+// helper function to be used as a callback to handle key inputs;
 const handleUserInput = function(data) {
-  if (data === '\u0003') {
+  
+  
+  if (data === '\u0003') { // exit the game if Ctrl + C is pressed
     process.exit();
   }
+  //Moving commands
+  if ((data === 'w' || data === "W") && lastCommand !== 'Move: down') {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      connection.write("Move: up");
+    }, 50);
+    lastCommand = "Move: up";
+  }
+  if (data === 's' && lastCommand !== "Move: up") {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      connection.write("Move: down");
+    }, 50);
+    lastCommand = "Move: down";
+  }
+  if (data === 'a' && lastCommand !== "Move: right") {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      connection.write("Move: left");
+    },50);
+    lastCommand = "Move: left";
+  }
+  if (data === 'd' && lastCommand !== "Move: left") {
+    clearInterval(intervalId);
 
-  if (data === 'w') {
-    connection.write("Move: up");
+    intervalId = setInterval(() => {
+      connection.write("Move: right");
+    }, 50);
+    lastCommand = "Move: right";
   }
-  if (data === 's') {
-    connection.write("Move: down");
-  }
-  if (data === 'a') {
-    connection.write("Move: left");
-  }
-  if (data === 'd') {
-    connection.write("Move: right");
-  }
+  // Message inputs
   if (data === 'j') {
     connection.write("Say: Ez Pz");
   }
@@ -33,6 +56,7 @@ const handleUserInput = function(data) {
 
 };
 
+// setupInput() function to creata an input interface
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
