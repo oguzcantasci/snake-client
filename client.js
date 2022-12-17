@@ -3,7 +3,7 @@ const prompt = require("prompt-sync")({ sigint: true });
 const { IP, PORT } = require("./constants");
 
 // Prompt to ask the user for their name
-const name = prompt("Enter your name\n");
+const name = prompt("Enter your name:  ");
 console.log(`Name set to ${name}.`);
 
 // establishes a connection with the game server
