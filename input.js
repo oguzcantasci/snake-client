@@ -23,8 +23,6 @@ const handleUserInput = function(data) {
   if (messages[data]) {
     connection.write(messages[data]);
   }
-
-
 };
 
 // setupInput() function to creata an input interface
