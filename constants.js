@@ -12,14 +12,14 @@ const messages = {
 };
 
 const moveCommands = {
-  w:  {command: "Move: up", cancel: 1},
-  W:  {command: "Move: up", cancel: 1},
-  a:  {command: "Move: left", cancel: 2},
-  A:  {command: "Move: left", cancel: 2},
-  s:  {command: "Move: down", cancel: 1},
-  S:  {command: "Move: down", cancel: 1},
-  d:  {command: "Move: right", cancel: 2},
-  D:  {command: "Move: right", cancel: 2},
+  w: "Move: up",
+  W: "Move: up",
+  a: "Move: left",
+  A: "Move: left",
+  s: "Move: down",
+  S: "Move: down",
+  d: "Move: right",
+  D: "Move: right",
 };
 
 module.exports = {
