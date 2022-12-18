@@ -11,10 +11,13 @@ This is simply a multiplayer take on the genre by me, one and only, [@oguzcantas
 
 ## How To Install?
 
-- Install `prompt` with the command:
+- Download this repo as .zip and extract it to a folder of your liking.
 
+- Install `prompt` with the command:
   `npm install prompt`
+  
 - Follow steps inside the snek server repo to run the server [here](https://github.com/oguzcantasci/snek-multiplayer).
+
 - Run the snake client with the command:
 
    `node play.js` 
