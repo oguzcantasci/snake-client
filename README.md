@@ -20,7 +20,7 @@ This is simply a multiplayer take on the genre by me, one and only, [@oguzcantas
    `node play.js` 
 
 
-   ## How To Play?
+ ## How To Play?
 
 - Enter your name when you firs run the client.
 - Move the snake `up, down, left, rigth` with `W, S, A, D` keys respectively.
